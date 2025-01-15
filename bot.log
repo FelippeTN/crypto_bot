@@ -1,0 +1,21 @@
+2025-01-14 22:55:49,885 - app.bot_config - INFO - Inicializando o TelegramChatbot
+2025-01-14 22:55:49,885 - app.bot_config - INFO - Inicializando a aplicação do bot
+2025-01-14 22:56:11,845 - app.bot_config - INFO - Menu loaded...
+2025-01-14 22:56:11,845 - app.bot_config - INFO - Gerando teclado inline
+2025-01-14 22:56:11,846 - app.bot_config - INFO - Teclado inline gerado com sucesso
+2025-01-14 22:56:16,533 - app.bot_config - INFO - Opção selecionada pelo usuário
+2025-01-14 22:56:20,516 - app.bot_config - INFO - Groq está sendo chamado...
+2025-01-14 22:56:40,078 - app.bot_config - INFO - Groq está sendo chamado...
+2025-01-14 23:01:55,029 - config.log_config - INFO - Inicializando o TelegramChatbot
+2025-01-14 23:01:55,029 - config.log_config - INFO - Inicializando a aplicação do bot
+2025-01-14 23:18:03,426 - config.log_config - INFO - Inicializando o TelegramChatbot
+2025-01-14 23:18:03,427 - config.log_config - INFO - Inicializando a aplicação do bot
+2025-01-14 23:18:05,526 - config.log_config - INFO - Menu loaded...
+2025-01-14 23:18:05,526 - config.log_config - INFO - Gerando teclado inline
+2025-01-14 23:18:05,527 - config.log_config - INFO - Teclado inline gerado com sucesso
+2025-01-14 23:18:05,961 - config.log_config - INFO - Menu loaded...
+2025-01-14 23:18:05,961 - config.log_config - INFO - Gerando teclado inline
+2025-01-14 23:18:05,961 - config.log_config - INFO - Teclado inline gerado com sucesso
+2025-01-14 23:18:12,287 - config.log_config - INFO - Menu loaded...
+2025-01-14 23:18:12,287 - config.log_config - INFO - Gerando teclado inline
+2025-01-14 23:18:12,287 - config.log_config - INFO - Teclado inline gerado com sucesso

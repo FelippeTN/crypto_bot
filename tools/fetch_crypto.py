@@ -140,8 +140,6 @@ def analyze_volatility(data, ticker_column):
 def rank_assets_with_qwen(assets):
     """Classifica os criptoativos por vantagem para compra e atualiza recomendações via API Qwen."""
     recommendations = []
-    output_dir = os.path.join(os.getcwd(), "recomendacoes")
-    os.makedirs(output_dir, exist_ok=True)
 
     for asset in assets:
         try:
@@ -173,46 +171,9 @@ def rank_assets_with_qwen(assets):
 
             recommendations.append({"Ativo": asset, "Recomendação": qwen_recommendation})
             
-            # Salva a recomendação em arquivo .txt
-            file_name = f"{asset}.txt"
-            file_path = os.path.join(output_dir, file_name)
-            with open(file_path, "w", encoding="utf-8") as file:
-                file.write(f"Recomendações para {asset}:\n\n{scores_text}\n{qwen_recommendation}")
         except Exception as e:
             recommendations.append({"Ativo": asset, "Recomendação": f"Erro ao analisar {asset}: {e}"})
    
     return recommendations
-
-
-def display_recommendations(recommendations):
-    """Exibe recomendações em formato de tabela usando tabulate."""
-    print("\n--- Recomendações de Compra ---")
-    print(tabulate(recommendations, headers="keys", tablefmt="grid"))
-
-
-def save_recommendations_to_files(recommendations, folder_name="recomendacoes_ativos"):
-    """Salva as recomendações em arquivos .txt separados por ativo."""
-    import os
-
-    # Cria o diretório se não existir
-    folder_path = os.path.join(os.getcwd(), "criptoativos", folder_name)
-    os.makedirs(folder_path, exist_ok=True)
-
-    for recommendation in recommendations:
-        asset = recommendation["Ativo"]
-        content = recommendation["Recomendação"]
-
-        # Define o caminho do arquivo para o ativo
-        file_name = f"{asset}.txt"
-        file_path = os.path.join(folder_path, file_name)
-
-        try:
-            # Salva o conteúdo no arquivo
-            with open(file_path, "w", encoding="utf-8") as file:
-                file.write(f"Ativo: {asset}\n\nRecomendação:\n{content}\n")
-        except Exception as e:
-            print(f"Erro ao salvar recomendação para {asset}: {e}")
-
-    print(f"\nRecomendações salvas na pasta: {folder_path}")
 
 

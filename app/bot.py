@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
-from tools.groq_config import groc_chat
-from tools.fetch_crypto import fetch_cryptos
+from tools.groq_config import groq_chat
+from tools.fetch_crypto import *
 from config.log_config import logger
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import (
@@ -64,7 +64,7 @@ class TelegramBot:
         
     async def handle_message(self, update: Update, context: CallbackContext):
         user_message = update.message.text.lower()
-        cripto_name, cripto_price = fetch_cryptos()
+        #recommendations = rank_assets_with_qwen(crypto_assets)
         
         if not self.esperando_resposta:
             # Inicia a conversa com a mensagem padrão e teclado
@@ -75,7 +75,7 @@ class TelegramBot:
             )
         elif user_message != "sair":
             logger.info('Groq está sendo chamado...')
-            response_text = groc_chat(cripto_name, cripto_price, user_message)
+            response_text = groq_chat(user_message)
             await update.message.reply_text(text=response_text)
         else:
             self.esperando_resposta = False

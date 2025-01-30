@@ -12,6 +12,9 @@ def groq_chat(user_promt: str) -> str:
         )
         chat_completion = client.chat.completions.create(
             messages=[
+                {   "role": "system",
+                    "content": f"Você é um bot profissional em analise de criptomoedas. "
+                },
                 {
                     "role": "user",
                     "content": f"""{user_promt}""",
